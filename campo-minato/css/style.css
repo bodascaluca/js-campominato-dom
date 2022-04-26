@@ -13,11 +13,17 @@ body{
     height: 100vh; 
     width: 100%;
 }
-
+/* HEADER  */
 header{
     height: 100px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
 
+.titolo{
+   margin:2rem;
+}
 main{
     height: calc(100% - 100px);
     background-color: #7fffd4;
@@ -126,3 +132,4 @@ main{
 .grid-item-difficult.active span {
     display:block;
 }
+

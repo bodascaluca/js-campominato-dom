@@ -66,13 +66,23 @@ gridContainer.innerHTML ="";
         const thisNumber = gridArray[i];
         // console.log(thisNumber);
         const domElement = generateGridItem(thisNumber);
+        // console.log(domElement);
 
         //aggiungo all'elemento appena creato la gestionde del click GRAZIE A QUESTO COMMANDO QUANDO CLICCO POSSO VEDERE I NUMERI
         domElement.addEventListener("click", function(){
 
             if (bombsArray.includes(thisNumber)) {
-                console.log('partita finita, punteggio di ' + score);
+                // console.log('partita finita, punteggio di ' + score);
                 this.classList.add("bomb");
+                const result = document.querySelector(".titolo");
+                console.log(result);
+                const newElement = document.createElement("h4");
+                newElement.innerHTML = `Hai ragginto punteggio ${score}`;
+                newElement.classList.add("titolo");
+                // console.log(newElement);
+                result.append(newElement);
+
+                
             } else {
                 this.classList.add("active");
                 score++;
