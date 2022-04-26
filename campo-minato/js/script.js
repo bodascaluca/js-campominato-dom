@@ -46,7 +46,7 @@ gridContainer.innerHTML ="";
     for (let i = 0; i < gridArray.length; i++){
 
         const thisNumber = gridArray[i];
-console.log(thisNumber);
+        // console.log(thisNumber);
         const domElement = generateGridItem(thisNumber);
 
         //aggiungo all'elemento appena creato la gestionde del click GRAZIE A QUESTO COMMANDO QUANDO CLICCO POSSO VEDEREI NUMEIR
@@ -60,9 +60,6 @@ console.log(thisNumber);
 
 
 };
-
-
-
 
 //Function
 /**
@@ -103,5 +100,26 @@ function generateGridNumbers(gridNumberQuantity){ //gridNumberQuantity ottinei 6
       return newElement;
  }
 
+// In seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina, altrimenti la cella cliccata si colora di azzurro e l'utente può continuare a cliccare sulle altre celle.
+ //Se il numero della cella è presente 
 
+
+//1 GENERAZIONE NUMERI RANDOM DA 1 A 16 TRA I 100 NUMERI
+const randomArray =[]; 
+
+
+for ( i = 1; i <= 16;i++ ){
+
+    randomNumber = getRndInteger(1, gridSize);
+     
+    if(!randomArray.includes(randomNumber)){
+        randomArray.push(randomNumber);
+    }
+
+}
+console.log(randomArray);
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
  
