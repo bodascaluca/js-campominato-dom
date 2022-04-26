@@ -89,7 +89,11 @@ gridContainer.innerHTML ="";
                 this.classList.add("active");
                 score++;
                 if (score===84){
-                    alert(`hai vinto`);
+                    const result =document.querySelector(".titolo");
+                    const newElement = document.createElement("h4");
+                    newElement.innerHTML = `Hai vinto`;
+                    newElement.classList.add("titolo");
+                    result.append(newElement);
                 }
             }
 
