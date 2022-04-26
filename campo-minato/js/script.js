@@ -66,35 +66,27 @@ gridContainer.innerHTML ="";
 
 //Function
 /**
- * Description crea un array contente numeri da 1 a limite definito in ordine casuale e non ripetutiì
- * @param {any} gridNumberQuantity -> la quantità di numeri casuali in ordine da 1 al valore dato
+ * Description dda 1 a 100
+ * @param {any} gridNumberQuantity -> 
  * @returns {any} -> array di numeri generati
  */
 function generateGridNumbers(gridNumberQuantity){ //gridNumberQuantity ottinei 64 
-    // crea l'array 
-    const numberArray = [];
-
-    //creo i numeri tramite un while
-    while (numberArray.length < gridNumberQuantity){ // Mettiamo gridNumberQuantity, ma potevamo mettere 64, ma a noi dobbiamo mettere in questo caso gridNumberQuantity
-        
-        
-        // 1.genera il numero random // il Mathrandom avremmo potuto meterlo anche, ma solo che per legibilità l'abbiamo fatto sotto.
-        const randomNumber = getRndInteger(1, gridNumberQuantity); 
-
-        //2.Se il numero non è all'interno dell'array,allora lo pusho 
-        if (!numberArray.includes(randomNumber)){
-            // pusha nell'array
-            numberArray.push(randomNumber);
-        }
+    
+    // Crep tramite un for i 100 numeri 
+    let numberFor = "";
+    for (let i = 1; i <= gridNumberQuantity; i++){
+         console.log(i);
     }
-        return numberArray; //Deve essere dentro il while
+
+    return numberFor; //Deve essere dentro il for
     }
+    
   
 
 //Function Random Number
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;//This JavaScript function always returns a random number between min and max (both included):
-}
+// function getRndInteger(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1) ) + min;//This JavaScript function always returns a random number between min and max (both included):
+// }
 
 //Dom Function 
 /**
