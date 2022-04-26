@@ -47,7 +47,6 @@ console.log(bombsArray);
 let score = 0;
 //Se il numero della cella è presente nell'array delle bombe:
 
-        //Stampare il numero di tentativi azzecati (il punteggio);
         // Fine gioco 
     //Altrimenti
         //La cella cliccata si colora di azzuro 
@@ -73,7 +72,10 @@ gridContainer.innerHTML ="";
 
             if (bombsArray.includes(thisNumber)) {
                 // console.log('partita finita, punteggio di ' + score);
+
                 this.classList.add("bomb");
+                
+                //Stampare il numero di tentativi azzecati (il punteggio);
                 const result = document.querySelector(".titolo");
                 console.log(result);
                 const newElement = document.createElement("h4");
@@ -86,6 +88,9 @@ gridContainer.innerHTML ="";
             } else {
                 this.classList.add("active");
                 score++;
+                if (score===84){
+                    alert(`hai vinto`);
+                }
             }
 
         })
