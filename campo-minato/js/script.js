@@ -46,7 +46,7 @@ gridContainer.innerHTML ="";
     for (let i = 0; i < gridArray.length; i++){
 
         const thisNumber = gridArray[i];
-
+console.log(thisNumber);
         const domElement = generateGridItem(thisNumber);
 
         //aggiungo all'elemento appena creato la gestionde del click GRAZIE A QUESTO COMMANDO QUANDO CLICCO POSSO VEDEREI NUMEIR
@@ -72,21 +72,16 @@ gridContainer.innerHTML ="";
  */
 function generateGridNumbers(gridNumberQuantity){ //gridNumberQuantity ottinei 64 
     
-    // Crep tramite un for i 100 numeri 
-    let numberFor = "";
+    // Crea tramite un for i 100 numeri 
+    let numberFor = [];
     for (let i = 1; i <= gridNumberQuantity; i++){
-         console.log(i);
+        numberFor.push(i);
+        console.log(numberFor);
     }
-
     return numberFor; //Deve essere dentro il for
+    
     }
     
-  
-
-//Function Random Number
-// function getRndInteger(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1) ) + min;//This JavaScript function always returns a random number between min and max (both included):
-// }
 
 //Dom Function 
 /**
