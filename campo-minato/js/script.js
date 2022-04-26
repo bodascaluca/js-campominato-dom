@@ -34,10 +34,31 @@ document.getElementById("start").addEventListener("click", startGame);
 
 //MAIN FUNCTION
 function startGame() { 
-    //-1 Genero numeri casuali da 1 a 64 in ordine casuale e non ripetute
+
 const gridSize = 100;
 const gridArray = generateGridNumbers(gridSize);
-console.log(gridArray);
+// console.log(gridArray);
+
+//1 GENERAZIONE NUMERI RANDOM DA 1 A 16 TRA I 100 NUMERI
+
+const bombsNumbers = 16;
+const bombsArray = genereteUniqueRandomNumbers(bombsNumbers, gridSize);
+console.log(bombsArray);
+
+//Se il numero della cella è presente nell'array delle bombe:
+if (gridArray === bombsArray){
+    // La cella diventa di rosso
+
+}
+        //Stampare il numero di tentativi azzecati (il punteggio);
+        // Fine gioco 
+    //Altrimenti
+        //La cella cliccata si colora di azzuro 
+        //I numeri della cella viene salvato all'interno dell'array di numeri azzeccati
+        //Se la lunghezza dell'array di numeri azzecati è uguale al numero massimo di tentativi di numeri consentiti:
+            //<fine gioco l'utente ha vibto.
+
+
 
 //-2 Per ogni numero creo un grid items
 const gridContainer = document.querySelector(".grid-container");
@@ -73,7 +94,7 @@ function generateGridNumbers(gridNumberQuantity){ //gridNumberQuantity ottinei 6
     let numberFor = [];
     for (let i = 1; i <= gridNumberQuantity; i++){
         numberFor.push(i);
-        console.log(numberFor);
+        // console.log(numberFor);
     }
     return numberFor; //Deve essere dentro il for
     
@@ -100,26 +121,33 @@ function generateGridNumbers(gridNumberQuantity){ //gridNumberQuantity ottinei 6
       return newElement;
  }
 
-// In seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina, altrimenti la cella cliccata si colora di azzurro e l'utente può continuare a cliccare sulle altre celle.
- //Se il numero della cella è presente 
 
 
-//1 GENERAZIONE NUMERI RANDOM DA 1 A 16 TRA I 100 NUMERI
-const randomArray =[]; 
-
-
-for ( i = 1; i <= 16;i++ ){
-
-    randomNumber = getRndInteger(1, gridSize);
-     
-    if(!randomArray.includes(randomNumber)){
-        randomArray.push(randomNumber);
+/**
+ * Description Generriamo 16 numeri random tra i 100 delle celle.
+ * @param {any} numbersRandom
+ * @param {any} maxLimit
+ * @returns {any} -> Array di 16 numeri
+ */
+function genereteUniqueRandomNumbers(numbersRandom, maxLimit){
+    const randomArray =[]; 
+    for ( i = 1; randomArray.length < numbersRandom;i++ ){
+    
+       const randomNumber = getRndInteger(1, maxLimit);
+         
+        if(!randomArray.includes(randomNumber)){
+            randomArray.push(randomNumber);
+        }
+    
     }
-
+    // console.log(randomArray);
+    return randomArray;
 }
-console.log(randomArray);
+
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
+  }   
+
  
+
