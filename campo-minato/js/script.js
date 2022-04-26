@@ -44,12 +44,9 @@ const gridArray = generateGridNumbers(gridSize);
 const bombsNumbers = 16;
 const bombsArray = genereteUniqueRandomNumbers(bombsNumbers, gridSize);
 console.log(bombsArray);
-
+let score = 0;
 //Se il numero della cella è presente nell'array delle bombe:
-if (gridArray === bombsArray){
-    // La cella diventa di rosso
 
-}
         //Stampare il numero di tentativi azzecati (il punteggio);
         // Fine gioco 
     //Altrimenti
@@ -70,9 +67,17 @@ gridContainer.innerHTML ="";
         // console.log(thisNumber);
         const domElement = generateGridItem(thisNumber);
 
-        //aggiungo all'elemento appena creato la gestionde del click GRAZIE A QUESTO COMMANDO QUANDO CLICCO POSSO VEDEREI NUMEIR
+        //aggiungo all'elemento appena creato la gestionde del click GRAZIE A QUESTO COMMANDO QUANDO CLICCO POSSO VEDERE I NUMERI
         domElement.addEventListener("click", function(){
-            this.classList.add("active");
+
+            if (bombsArray.includes(thisNumber)) {
+                console.log('partita finita, punteggio di ' + score);
+                this.classList.add("bomb");
+            } else {
+                this.classList.add("active");
+                score++;
+            }
+
         })
 
         //appendo questo elemento al contenitore

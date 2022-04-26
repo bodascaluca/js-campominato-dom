@@ -57,6 +57,9 @@ main{
     color: white;
 }
 
+.bomb {
+    background-color: red;
+}
 .grid-item.active span {
     display:block;
 }
