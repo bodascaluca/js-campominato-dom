@@ -1,0 +1,125 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+.app-wrapper{
+    height: 100vh; 
+    width: 100%;
+}
+
+header{
+    height: 100px;
+}
+
+main{
+    height: calc(100% - 100px);
+    background-color: #7fffd4;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container{
+    height: 800px;
+    width: 800px;
+    border: 1px solid black;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-start;/*Tecnicamnte non c'è bisogno di questo basta align-content:flex-start;*/
+    justify-content: flex-start;/*Tecnicamnte non c'è bisogno di questo basta align-content:flex-start;*/
+    align-content: flex-start; /*Per mettere tutti i quadratini riga dopo riga senza nessun spaio*/
+}
+
+
+.grid-item{
+    width: calc(100% /10); /* Mettiamo otto perchè vogliamo ottenre 8 collone*/
+    height: calc(100% /10);
+    border:1px solid black;
+    color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .grid-item span{
+    display: none;  
+} */
+
+.grid-item.active{
+    background-color: #6495ed;
+    color: white;
+}
+
+.grid-item.active span {
+    display:block;
+}
+
+/* MEDIUM  */
+.grid-container-medium{
+    height: 600px;
+    width: 600px;
+    border: 1px solid black;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-start;/*Tecnicamnte non c'è bisogno di questo basta align-content:flex-start;*/
+    justify-content: flex-start;/*Tecnicamnte non c'è bisogno di questo basta align-content:flex-start;*/
+    align-content: flex-start; /*Per mettere tutti i quadratini riga dopo riga senza nessun spaio*/
+}
+
+.grid-item-medium{
+    width: calc(100% /9); /* Mettiamo otto perchè vogliamo ottenre 8 collone*/
+    height: calc(100% /9);
+    border:1px solid black;
+    color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item-medium.active{
+    background-color: red;
+    color: white;
+}
+
+.grid-item-medium.active span {
+    display:block;
+}
+
+/* DIFFICULT  */
+.grid-container-difficult{
+    height: 600px;
+    width: 600px;
+    border: 1px solid black;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-start;/*Tecnicamnte non c'è bisogno di questo basta align-content:flex-start;*/
+    justify-content: flex-start;/*Tecnicamnte non c'è bisogno di questo basta align-content:flex-start;*/
+    align-content: flex-start; /*Per mettere tutti i quadratini riga dopo riga senza nessun spaio*/
+}
+
+.grid-item-difficult{
+    width: calc(100% /7); /* Mettiamo otto perchè vogliamo ottenre 8 collone*/
+    height: calc(100% /7);
+    border:1px solid black;
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item-difficult.active{
+    border:1px solid red;
+    background-color: black;
+    color: red;
+}
+
+.grid-item-difficult.active span {
+    display:block;
+}
